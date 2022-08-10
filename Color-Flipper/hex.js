@@ -6,16 +6,17 @@ const color=document.querySelector('.color');
 const body=document.querySelector('body');
 
 btn.addEventListener('click',()=>{
-    const Num1=getRandomNumber();
-    const Num2=getRandomNumber();
-    const Num3=getRandomNumber();
-    const Num4=getRandomNumber();
-    const Num5=getRandomNumber();
-    const Num6=getRandomNumber();
 
-    body.style.backgroundColor=`#${hex[Num1]}${hex[Num2]}${hex[Num3]}${hex[Num4]}${hex[Num5]}${hex[Num6]}`;
-    color.textContent=`#${hex[Num1]}${hex[Num2]}${hex[Num3]}${hex[Num4]}${hex[Num5]}${hex[Num6]}`;
-    
+
+    let hexColor="#";
+
+    for (let i=0;i<6;i++){
+       hexColor+=hex[getRandomNumber()];
+    }
+
+    body.style.backgroundColor=hexColor;
+    color.textContent=hexColor;
+ 
 
 })
 
